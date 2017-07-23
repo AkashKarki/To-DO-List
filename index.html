@@ -1,12 +1,14 @@
 <html lang="en" ng-app='ngTodo'>
 <head>
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="angular.js"></script>
 <script type="text/javascript" src="main.js"></script>
+</style>
 </head>
 <body ng-controller="mainController">
     <table>
         <tr ng-repeat="title in TodoList">
-            <td id="Todo{{$index}}">{{title.Title}}</td>
+            <td id="Todo{{$index}}"><h2>{{title.Title}}</h2></td>
         </tr>
     </table>
 </body>
