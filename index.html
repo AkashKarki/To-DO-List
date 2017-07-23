@@ -4,6 +4,10 @@
 <script type="text/javascript" src="main.js"></script>
 </head>
 <body ng-controller="mainController">
-    
+    <table>
+        <tr ng-repeat="title in TodoList">
+            <td id="Todo{{$index}}">{{title.Title}}</td>
+        </tr>
+    </table>
 </body>
 </html>
