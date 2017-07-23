@@ -1,15 +1,26 @@
 <html lang="en" ng-app='ngTodo'>
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
     <script type="text/javascript" src="angular.js"></script>
 <script type="text/javascript" src="main.js"></script>
 </style>
 </head>
 <body ng-controller="mainController">
+    <div class="main">
     <table>
-        <tr ng-repeat="title in TodoList">
-            <td id="Todo{{$index}}"><h2>{{title.Title}}</h2></td>
+        <tr  ng-repeat="title in TodoList track by $index">
+            <td id="{{$index}}" onclick="Display(id)"><h2>{{title.Title}}</h2></td>
         </tr>
     </table>
+    <i class="fa fa-plus add"></i>
+</div>
+    <dialog id="newToDO">Title:<input type="text" id="title" placeholder="Title" ><br><br><br>
+                    To Do:<input type="textarea" id="todo" placeholder="To Do"  ><br>
+                            <input type="button" value="OK" id="close"></dialog>
+    <dialog id="displays"><p id="para"></p>
+        <input type="button" value="OK" id="close1">
+    </dialog>
+    <script src="jquery-2.2.0.js"></script>
 </body>
 </html>
