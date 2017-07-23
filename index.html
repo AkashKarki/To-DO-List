@@ -2,12 +2,12 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="datatable.css">
     <script type="text/javascript" src="angular.js"></script>
-<script type="text/javascript" src="main.js"></script>
 </head>
 <body ng-controller="mainController">
     <div class="main">
-    <table>
+    <table id="tab">
         <tr  ng-repeat="title in TodoList track by $index">
             <td id="{{$index}}" class="borders" onclick="Display(id)"><h2>{{title.Title}}</h2></td>
             <td ><button id="butt{{$index}}" class="addBut" onclick="Delete(id)"><i class="fa fa-trash" style="font-size: 20px;"></i></button></td>
@@ -22,5 +22,7 @@
         <input type="button" value="OK" id="close1">
     </dialog>
     <script src="jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

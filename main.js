@@ -21,6 +21,7 @@ TodoApp.controller('mainController',function($scope) {
         else{
             $scope.TodoList=TodoLists;
         }
+
         var Dia;
         $('.add').on('click',function(){
             Dia = document.querySelector('#newToDO');
