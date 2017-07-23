@@ -6,6 +6,7 @@
     <script type="text/javascript" src="angular.js"></script>
 </head>
 <body ng-controller="mainController">
+    <h3>Click on tab to get information<h3>
     <div class="main">
     <table id="tab">
         <tr  ng-repeat="title in TodoList track by $index">
@@ -22,7 +23,6 @@
         <input type="button" value="OK" id="close1">
     </dialog>
     <script src="jquery-2.2.0.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
