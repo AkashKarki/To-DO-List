@@ -4,16 +4,16 @@
     <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
     <script type="text/javascript" src="angular.js"></script>
 <script type="text/javascript" src="main.js"></script>
-</style>
 </head>
 <body ng-controller="mainController">
     <div class="main">
     <table>
         <tr  ng-repeat="title in TodoList track by $index">
-            <td id="{{$index}}" onclick="Display(id)"><h2>{{title.Title}}</h2></td>
+            <td id="{{$index}}" class="borders" onclick="Display(id)"><h2>{{title.Title}}</h2></td>
+            <td ><button id="butt{{$index}}" class="addBut" onclick="Delete(id)"><i class="fa fa-trash" style="font-size: 20px;"></i></button></td>
         </tr>
     </table>
-    <i class="fa fa-plus add"></i>
+    <button class="addBut"><i class="fa fa-plus add" style="font-size: 20px;"></i></button>
 </div>
     <dialog id="newToDO">Title:<input type="text" id="title" placeholder="Title" ><br><br><br>
                     To Do:<input type="textarea" id="todo" placeholder="To Do"  ><br>

@@ -3,7 +3,8 @@ var TodoApp = angular.module('ngTodo',[]);
 TodoApp.controller('mainController',function($scope) { 
     //localStorage.setItem("TodoLists",null);
     var TodoLists=JSON.parse(localStorage.getItem("TodoLists"));
-        if(TodoLists==null)
+    console.log(TodoLists.length);
+        if(TodoLists.length==0||TodoLists==undefined||TodoLists==null)
         {
             $scope.TodoList=[{'Title':'Navy form',
                            'Todo':'Submit the Navy form till 31th'},
@@ -52,6 +53,14 @@ TodoApp.controller('mainController',function($scope) {
         })
 
 
+function Delete(id)
+{
+    var TodoLists=JSON.parse(localStorage.getItem("TodoLists"));
+    id=id.charAt(id.length-1);
+    TodoLists.splice(id, 1);
+    localStorage.setItem("TodoLists", JSON.stringify(TodoLists));
+    location.reload();
+}
 
 function Display(id){
     var TodoLists=JSON.parse(localStorage.getItem("TodoLists"));
@@ -62,5 +71,8 @@ function Display(id){
             $('.main').addClass('blur');
 
         }
+
+
+
 
 
