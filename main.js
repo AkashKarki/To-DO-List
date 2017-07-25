@@ -23,7 +23,7 @@ TodoApp.controller('mainController',function($scope) {
         }
 
         var Dia;
-        $('.add').on('click',function(){
+        $('.addBut').on('click',function(){
             Dia = document.querySelector('#newToDO');
             Dia.show(); 
             $('.main').addClass('blur');

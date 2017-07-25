@@ -1,15 +1,28 @@
 <html lang="en" ng-app='ngTodo'>
 <head>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="datatable.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datatable.css">
+
     <script type="text/javascript" src="angular.js"></script>
 </head>
 <body ng-controller="mainController">
     <h3>Click on tab to get information<h3>
+        
     <div class="main">
+        <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="query">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
     <table id="tab">
-        <tr  ng-repeat="title in TodoList track by $index">
+        <tr  ng-repeat="title in TodoList |filter:{Title:query} track by $index">
             <td id="{{$index}}" class="borders" onclick="Display(id)"><h2>{{title.Title}}</h2></td>
             <td ><button id="butt{{$index}}" class="addBut" onclick="Delete(id)"><i class="fa fa-trash" style="font-size: 20px;"></i></button></td>
         </tr>
@@ -24,5 +37,6 @@
     </dialog>
     <script src="jquery-2.2.0.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="bootstrap\js\bootstrap.js"></script>
 </body>
 </html>

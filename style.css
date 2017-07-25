@@ -1,10 +1,11 @@
 .borders{
     border: 3px solid black;
     text-align: center;
-    border-radius: 8px;
     font-size: 20px;
+    border-radius:14px;
 }
-table{
+#tab{
+    margin-top: -20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,4 +55,36 @@ td,i:hover{cursor:pointer;
 .delBut,.addBut{
     background-color: Transparent;
     border-radius: 3px;
+}
+#newToDO,#displays{
+  background-color: rgba(0,0,0,.6);
+  border-radius: 10px;
+    text-align: center;
+    margin-top: 5%;
+}
+i{
+  color: black;
+}
+.input-group{
+  width: 300px;
+  display: absolute;
+  text-align: center;
+    margin: 0 auto ; 
+
+}
+.col-lg-6{
+margin-top: 0;
+  width: 100%;
+ 
+}
+
+input{
+  color: black;
+}
+
+#title,#todo{
+  width: 200px;
+}
+#para{
+  color: white;
 }
