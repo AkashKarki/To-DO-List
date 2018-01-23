@@ -2,7 +2,11 @@ var TodoApp = angular.module('ngTodo',[]);
 
 TodoApp.controller('mainController',function($scope) { 
     //localStorage.setItem("TodoLists",null);
-    var TodoLists=JSON.parse(localStorage.getItem("TodoLists"));
+    var TodoLists;
+    try{
+    TodoLists=JSON.parse(localStorage.getItem("TodoLists"));
+  }
+  catch(error){
         if(TodoLists.length==0||TodoLists==undefined||TodoLists==null)
         {
             $scope.TodoList=[{'Title':'Navy form',
@@ -17,9 +21,8 @@ TodoApp.controller('mainController',function($scope) {
                            'Todo':"Attend Ankti's Party 7:30pm"}];  
                            localStorage.setItem("TodoLists", JSON.stringify($scope.TodoList)); 
         }
-        else{
+      }
             $scope.TodoList=TodoLists;
-        }
 
         var Dia;
         $('.addBut').on('click',function(){
