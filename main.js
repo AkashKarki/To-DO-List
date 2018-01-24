@@ -19,6 +19,7 @@ TodoApp.controller('mainController',function($scope) {
                            'Todo':'Take part in CodeVita on Monday'},
                            {'Title':'Party',
                            'Todo':"Attend Ankti's Party 7:30pm"}];  
+                           console.log(TodoLists);
                            localStorage.setItem("TodoLists", JSON.stringify($scope.TodoList)); 
         }
       }
