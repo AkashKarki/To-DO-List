@@ -22,7 +22,7 @@
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
     <table id="tab">
-        <tr  ng-repeat="title in TodoList |filter:{Title:query} track by $index">
+        <tr  ng-repeat="title in TodoLists |filter:{Title:query} track by $index">
             <td id="{{$index}}" class="borders" onclick="Display(id)"><h2>{{title.Title}}</h2></td>
             <td ><button id="butt{{$index}}" class="addBut" onclick="Delete(id)"><i class="fa fa-trash" style="font-size: 20px;"></i></button></td>
         </tr>
